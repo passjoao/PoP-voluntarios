@@ -1,1 +1,0 @@
-# Pedra, papel e tesoura
