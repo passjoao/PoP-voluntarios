@@ -1,0 +1,51 @@
+import random
+import string
+
+print('Bem vindo ao Gerador de Senhas')
+
+print("_____________________________________")
+
+v = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890'
+
+r = True
+
+while r:
+  while True:
+    try:
+      n = int(input('Quantas senhas deseja:'))
+      break
+    except ValueError:
+      print("_____________________________________")
+      print('Larga de ser burro, use número ')
+
+  print("_____________________________________")
+
+  while True:
+      try:
+          l = int(input('Quantos caracteres deseja:'))
+          break
+      except ValueError:
+        print("_____________________________________")
+        print('Larga de ser burro, use número ')
+
+  print("_____________________________________")
+
+  print('Aqui estão as senhas geradas:')
+  for s in range(n):
+    senha = ''.join(random.choices(string.ascii_letters + string.digits, k=l))
+    print(senha)
+    
+
+  while True:
+    resposta = input("Deseja gerar novas senhas? (s/n) ")
+    if resposta.lower() == "s":
+      break
+    elif resposta.lower() == "n":
+      r = False
+      break
+    else:
+      
+      print("Opção inválida. Digite 's' para sim ou 'n' para não.")
+
+print("_____________________________________")
+print("Até a próxima")
